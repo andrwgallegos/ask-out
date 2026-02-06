@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/css/styles.css" />
+    <title>&lt;33</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="header_text">Abi, may I be your boyfriend?💛</h1>
+
+      <div class="gif_container">
+        <img src="./style/images/snoopylove.gif" alt="Cute gif" />
+      </div>
+
+      <div class="buttons">
+        <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+        <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
+      </div>
+    </div>
+
+    <script>
+      function nextPage() {
+        window.location.href = "yes.html";
+      }
+
+      function moveButton() {
+        const btn = document.getElementById("noButton");
+
+        const padding = 20;
+        const maxX = window.innerWidth - btn.offsetWidth - padding;
+        const maxY = window.innerHeight - btn.offsetHeight - padding;
+
+        const x = Math.random() * maxX + padding / 2;
+        const y = Math.random() * maxY + padding / 2;
+
+        btn.style.left = `${x}px`;
+        btn.style.top = `${y}px`;
+      }
+    </script>
+
+    <script>
+      const emojis = ["💛", "💖", "✨"];
+
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        heart.style.position = "absolute";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = "100vh";
+        heart.style.fontSize = "20px";
+        heart.style.opacity = 0.8;
+        heart.style.pointerEvents = "none";
+        heart.style.transition = "transform 6s linear, opacity 6s linear";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.style.transform = "translateY(-120vh)";
+          heart.style.opacity = 0;
+        }, 100);
+
+        setTimeout(() => heart.remove(), 6000);
+      }
+
+      setInterval(createHeart, 800);
+    </script>
+  </body>
+</html>
+
