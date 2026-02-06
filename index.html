@@ -3,19 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/css/styles.css" />
-    <title>&lt;33</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <title><33</title>
   </head>
 
   <body>
     <div class="container">
-     <h1 class="header_text">
-  <span id="secretHeart">💛</span>Abi, may I be your boyfriend?💛
-</h1>
-
+      <h1 class="header_text">
+        <span id="secretHeart">💛</span>Abi, may I be your boyfriend?💛
+      </h1>
 
       <div class="gif_container">
-        <img src="./style/images/snoopylove.gif" alt="Cute gif" />
+        <img src="./snoopylove.gif" alt="Cute gif" />
       </div>
 
       <div class="buttons">
@@ -31,8 +30,8 @@
 
       function moveButton() {
         const btn = document.getElementById("noButton");
-
         const padding = 20;
+
         const maxX = window.innerWidth - btn.offsetWidth - padding;
         const maxY = window.innerHeight - btn.offsetHeight - padding;
 
@@ -43,6 +42,7 @@
         btn.style.top = `${y}px`;
       }
     </script>
+
 
     <script>
       const emojis = ["💛", "💖", "✨"];
@@ -70,6 +70,13 @@
 
       setInterval(createHeart, 800);
     </script>
+
+    <script>
+      document.getElementById("secretHeart").addEventListener("click", () => {
+        window.location.href = "secret.html";
+      });
+    </script>
   </body>
 </html>
+
 
