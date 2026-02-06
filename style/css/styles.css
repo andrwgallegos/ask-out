@@ -31,6 +31,16 @@ body {
   margin-bottom: 0px;
 }
 
+#secretHeart {
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+#secretHeart:hover {
+  transform: scale(1.25);
+}
+
 .buttons {
   display: flex;
   justify-content: center;
@@ -78,4 +88,3 @@ body {
   50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
-
